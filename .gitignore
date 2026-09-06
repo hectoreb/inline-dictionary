@@ -9,3 +9,5 @@ dist/
 .idea/
 *.swp
 *.tsbuildinfo
+coverage/
+*.lcov

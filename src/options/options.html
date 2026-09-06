@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inline Dictionary — Opciones</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Inline Dictionary</h1>
+    <p class="subtitle">Configuración</p>
+
+    <section>
+      <h2>Merriam-Webster (inglés)</h2>
+      <p class="help">
+        Para buscar definiciones en inglés necesitas una API key gratuita de
+        <a href="https://dictionaryapi.com/" target="_blank" rel="noopener">dictionaryapi.com</a>.
+        Sin esta key, la extensión sigue funcionando — solo en español (Wikcionario).
+      </p>
+      <label for="api-key">API key</label>
+      <input type="password" id="api-key" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+      <div class="row">
+        <button id="save-key" type="button">Guardar</button>
+        <button id="clear-key" type="button" class="secondary">Eliminar</button>
+        <span id="key-status" class="status"></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Idioma por defecto</h2>
+      <p class="help">
+        Si está en "Auto", la extensión detecta el idioma de cada palabra. Si no, usa el idioma que elijas aquí.
+      </p>
+      <label for="default-lang">Idioma</label>
+      <select id="default-lang">
+        <option value="auto">Auto (detectar)</option>
+        <option value="es">Español (Wikcionario)</option>
+        <option value="en">English (Merriam-Webster)</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>Cache</h2>
+      <p class="help">Las definiciones se guardan localmente para acelerar lookups repetidos. Puedes limpiarla aquí.</p>
+      <button id="clear-cache" type="button" class="secondary">Limpiar cache</button>
+      <span id="cache-status" class="status"></span>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

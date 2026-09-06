@@ -1,0 +1,6 @@
+/* Popover CSS — kept in a separate file for source map clarity. */
+/* The actual styles are inlined in the shadow DOM via content.ts for encapsulation. */
+/* This file exists to satisfy the manifest reference and for debugging. */
+#__inline_dictionary_popover__ {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
