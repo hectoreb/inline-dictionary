@@ -167,7 +167,12 @@ async function lookup(word: string, overrideLang?: Language): Promise<void> {
     const response: LookupResponse = await chrome.runtime.sendMessage(request);
     renderResult(response, word, overrideLang);
   } catch (err: unknown) {
-    renderError(err instanceof Error ? err.message : 'Error de comunicación con el service worker');
+    const raw = err instanceof Error ? err.message : String(err);
+    if (raw.includes('Extension context invalidated') || raw.includes('Receiving end does not exist')) {
+      renderError('La extensión se reinició. Recarga esta página (F5 o Cmd+R) y vuelve a seleccionar la palabra.');
+    } else {
+      renderError(`Error: ${raw}`);
+    }
   }
 }
 
